@@ -30,8 +30,10 @@ header a{
 nav{
     margin-top:10px;
 }
-.main-body{
-    min-height: 500px;
+.mainbody{
+    min-height: 400px;
+    padding: 20px;
+ 
 }
 .form{
     border: 1px solid rgb(23, 154, 241);
@@ -43,6 +45,14 @@ nav{
     color: rgb(23, 154, 241);
     padding: 20px;
 
+}
+.other{
+    border: 1px solid rgba(23, 154, 241, 0.404);
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+
+    
 }
 .mybtn{
     background-color:rgb(23, 154, 241);
@@ -57,4 +67,12 @@ input[type=text]{
     border: rgba(23, 154, 241, 0.336) 1px solid;
     padding: 5px;
     border-radius: 7px;
+}
+
+footer{
+    text-align: center;
+    background-color: rgb(23, 154, 241);
+    padding: 50px;
+    color: white;
+    height: 50px;
 }
