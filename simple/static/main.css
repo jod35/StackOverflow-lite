@@ -43,7 +43,8 @@ nav{
     text-align: center;
     margin-top: 20px;
     color: rgb(23, 154, 241);
-    padding: 20px;
+    padding: 30px;
+    
 
 }
 .other{
@@ -62,11 +63,16 @@ nav{
     color: white;
     color:white;
 }
-
+.mybtn:hover{
+    color: rgb(23, 154, 241);
+    background-color: white;
+    border: 1px solid rgb(23, 154, 241);
+}
 input[type=text]{
-    border: rgba(23, 154, 241, 0.336) 1px solid;
+    border: rgba(23, 154, 241, 0.185) 1px solid;
     padding: 5px;
     border-radius: 7px;
+    color: rgb(23, 154, 241);
 }
 
 footer{
@@ -76,3 +82,15 @@ footer{
     color: white;
     height: 50px;
 }
+.other a{
+    color: rgb(23, 154, 241);
+    text-decoration: none;
+}
+.welcome{
+    padding: 100px;
+    border: 1px solid rgba(23, 154, 241, 0.459);
+    padding: 180px;
+    border-bottom-right-radius: 300px;
+    color: rgb(23, 154, 241);
+}
+
