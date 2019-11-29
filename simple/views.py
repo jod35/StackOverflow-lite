@@ -28,10 +28,10 @@ def signup():
 
 @app.route('/login',methods=['GET', 'POST'])
 def login():
-    email=request.form.get('prompt')
-    user=User.query.filter_by(email=email).first()
+    email=request.form.get('email')
     password=request.form.get('password')
-    if user and bcrypt.check_password_hash(password,user.password):
+    user=User.query.filter_by(email=email).first()
+    if user and bcrypt.check_password_hash(user.password,password):
         login_user(user)
         return "Logged In"
     return render_template('login.html')
