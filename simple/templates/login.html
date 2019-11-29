@@ -1,18 +1,20 @@
 {% extends 'layout.html' %}
 {% block body %}
+<form action="{{url_for('login')}}" method="POST">
 <div class="form">
     <h2>Sign In</h2>
     <br>
     <p>Username Or Email</p>
-    <input type="text" name="" id="" class="myfield">
+    <input type="text" name="prompt" id="" class="myfield">
     <br>
     <br>
     <p>Password</p>
-    <input type="text" name="password" id="" class="myfield">
+    <input type="password" name="password" id="" class="myfield">
     <br><br>
     <input type="submit" value="Sign In" class="mybtn">
     <br><br>
 </div>
+</form>
 <br><br>
 <div class="other">
     <small>New Here, <a href="{{url_for('signup')}}">Create An Account</a></small>

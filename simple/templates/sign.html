@@ -1,5 +1,19 @@
 {% extends 'layout.html' %}
 {% block body %}
+
+{% with messages =get_flashed_messages()  %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="other">
+            <center>
+                <p>{{message}}</p>
+                <a href="{{url_for('login')}}">Login</a>
+            </center>
+        </div>
+    {% endfor %}
+{% endif %}
+{% endwith %}
+<form action="{{url_for('signup')}}" method="POST">   
 <div class="form">
     <h2>Sign Up</h2>
     <p>Username</p>
@@ -9,13 +23,14 @@
     <input type="text" name="email" id="" class="myfield">
     <br>
     <p>Password</p>
-    <input type="text" name="password" id="" class="myfield">
+    <input type="password" name="password" id="" class="myfield">
     <br>
     <p>Confirm Password</p>
-    <input type="text" name="confirm" id="" class="confirm">
+    <input type="password" name="confirm" id="" class="confirm">
     <br><br>
     <input type="submit" value="Sign Up" class="mybtn">
 </div>
+</form>
 <br><br>
 
 <div class="other">
