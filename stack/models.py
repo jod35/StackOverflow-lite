@@ -13,7 +13,7 @@ class User(db.Model,UserMixin):
     
 
     def __repr__(self):
-        return "user {}".format(self.full_name)
+        return "{}".format(self.full_name)
 
 class Question(db.Model):
     id=db.Column(db.Integer,primary_key=True)

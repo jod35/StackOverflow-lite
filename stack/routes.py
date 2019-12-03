@@ -7,7 +7,7 @@ from .models import User,Question
 
 @app.route('/')
 def index():
-    questions=Question.query.filter_by(author=current_user).limit(10).all()
+    questions=Question.query.all()
     return render_template('index.html',questions=questions)
 
 @app.route('/signup',methods=['GET', 'POST'])
@@ -56,8 +56,21 @@ def ask():
     db.session.add(new_question)
     db.session.commit()
     flash("Question Asked! Wait for the replies.")
-    return redirect(url_for('ask'))
+    return redirect(url_for('index'))
 
 @app.route('/ask_questions')
 def ask_page():
     return render_template('ask.html')
+
+@app.route('/feed')
+def view_questions():
+    questions=Question.query.limit(10).all()
+
+    return render_template('stackfeed.html',questions=questions)
+
+@app.route('/delete_question/<int:question_id>',methods=['POST','GET'])
+def delete_question(question_id):
+    question_to_delete=Question.query.get_or_404(question_id)
+    db.session.delete(question_to_delete)
+    db.session.commit()
+    return redirect(url_for('index'))

@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block body %}
+     <div class="dashboard">
+         <div class="left">
+            <a href="" class="user-opt">View Questions</a>
+            <a href="{{url_for('ask_page')}}" class="user-opt">Ask A Question</a>
+            <a href="{{url_for('logout')}}" class="user-opt">Log Out</a>
+         </div>
+         <div class="right">
+             <div class="recent">
+               <h1>Recent Questions By You</h1>
+               {%for question in questions%}
+                  
+                        <div class="quest">
+                           <h2>{{question.author}}</h2> 
+                           <h3>{{question.title}} </h3>
+                           <p>{{question.content}}</p>
+                           <div class="quest-opt">
+                                <i class="fas fa-heart"></i>
+                            <a href="" class="">Answer</a>
+                            <a href="">Like</a>
+                           </div> 
+                        </div>
+                        <br><br>
+                         
+               {%endfor%}
+             </div>
+         </div>
+     </div>
+ 
+  
+{% endblock body %}
