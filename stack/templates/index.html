@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block body %}
+  {% if current_user.is_authenticated %}
+     <div class="dashboard">
+         <div class="left">
+            <a href="" class="user-opt">View Questions</a>
+            <a href="{{url_for('ask_page')}}" class="user-opt">Ask A Question</a>
+            <a href="{{url_for('logout')}}" class="user-opt">Log Out</a>
+         </div>
+         <div class="right">
+             <div class="recent">
+               <h1>Recent Questions By You</h1>
+               {%for question in questions%}
+                  <div class="quest">
+                     <h3>{{question.title}}</h3>
+                     <p>{{question.content}}</p>
+                  </div>
+                  <br><br>
+               {%endfor%}
+             </div>
+         </div>
+     </div>
+  {% else %}
+  <div class="welcome">
+        <h1>Welcome To Stack Overflow Lite</h1>
+        <div class="options">
+          <a href="{{url_for('signup')}}" class="mybtn">Create An Account</a>
+          <a href="{{url_for('login')}}" class="mybtn">Login</a>
+        </div>
+    </div>
+  {% endif %}
+{% endblock body %}

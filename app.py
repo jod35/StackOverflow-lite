@@ -1,4 +1,4 @@
-from simple import app
+from stack import app
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run()

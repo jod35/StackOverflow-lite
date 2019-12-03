@@ -1,0 +1,114 @@
+*{
+  font-family: sans-serif;
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header,footer{
+  background-color: rgb(72, 72, 224);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+header a{
+  color: white;
+  text-decoration: none;
+}
+.welcome{
+  min-height: 500px;
+  text-align: center;
+  padding: 220px;
+  background-color: rgba(30, 143, 255, 0.671);
+  color: white;
+  border-bottom-right-radius: 300px;
+  border-top-left-radius: 300px;
+}
+
+.options{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.options a{
+  padding: 10px;
+}
+.mybtn{
+  color: rgba(255, 255, 255, 0.589);
+  text-decoration: none;
+  background-color: dodgerblue;
+  border: white 1px solid;
+  border-radius: 7px;
+  padding: 16px;
+}
+.mybtn:hover{
+  color:white;
+
+}
+.form{
+  padding: 30px;
+  color:rgb(72, 72, 224);
+  width: 500px;
+  margin: auto;
+  text-align: center;
+  border-radius: 7px;
+  border: 1px solid rgb(72, 72, 224);
+}
+.other{
+  border: 1px solid rgb(72, 72, 224);
+  padding: 20px;
+  border-radius: 7px;
+}
+.other a{
+  color:dodgerblue;
+}
+.container{
+  padding: 80px;
+  min-height: 500px;
+}
+.form-group{
+  display: flex;
+}
+.form-group input[type=text]{
+  margin: 5px;
+}
+.dashboard{
+  min-height: 500px;
+  display: flex;
+}
+.left{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+.user-opt{
+
+  background-color: white;
+  padding: 20px;
+  color: rgba(30, 143, 255, 0.671);
+  text-decoration: none;
+
+}
+.right{
+
+  width: 80%;
+}
+.recent{
+
+ color: dodgerblue;
+}
+
+.question{
+  padding: 40px;
+  border:1px solid dodgerblue;
+  color: dodgerblue;
+}
+.quest{
+  border:1px solid black;
+  border-radius: 7px;
+  padding:20px;
+}

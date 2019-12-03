@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container">
+        <div class="form">
+              `{% with messages =get_flashed_messages()  %}
+                  {% if messages %}
+                      {% for message in messages %}
+                          <div class="other">
+                              {{ message }}
+                          </div>
+                      {% endfor %}
+                  {% endif %}
+               {% endwith %}`
+                <form action="{{url_for('signup')}}" method="post">
+                    <h2>Register</h2>
+                    <br><br>
+                    <p>Full Name</p>
+                    <input type="text" name="full_name" id="" class="myfield" placeholder="Full Names">
+                    <br><br>
+                    <p>Username</p>
+                    <input type="text" name="username" id="" class="myfield" placeholder="Username">
+                    <br><br>
+                    <p>Email</p>
+                    <input type="text" name="email" id="" class="myfield" placeholder="Email">
+                    <br><br>
+                    <p>Password</p>
+                    <input type="password" name="password" id="" class="myfield" placeholder="Password">
+                    <br><br>
+                    <input type="submit" value="Sign In" class="mybtn" >
+
+                </form>
+                <br><br>
+                <div class="other">
+                    <small>
+                        Already Have An Account <a href="{{url_for('login')}}">Sign In </a>
+                    </small>
+                </div>
+        </div>
+</div>
+{% endblock body %}
