@@ -15,7 +15,7 @@
                            <p>{{question_to_answer.content}}</p>
                            <br>
                            <div class="">
-                                <form action="/answer_question/{{question_to_answer.id}}" method="post">
+                                <form action="/add_answer/{{question_to_answer.id}}" method="post">
                                    <textarea name="content" id="" cols="30" rows="10" placeholder="Your Answer"></textarea>
                                    <br>
                                    <input type="submit" value="Answer Question" class="mybtn">
@@ -23,14 +23,20 @@
                             </div>
                             <br><br>
 
-                            <div class="quest">
-                                <h2>Answers</h2>
+                            <div class="">
+                                <h2>{{count}} Answers for the question</h2>
                                 {% for answer in answers  %}
+                                    
+                                    {% if answer.question_id == question_to_answer.id %}
                                     <div class="quest">
-                                        <h3>{{answer.author}}</h3> at <small>{{answer.date_answered}}</small>
-                                        <p>{{answer.content}}</p>
+                                            <h3>{{answer.author}}</h3> at <small>{{answer.date_answered}}</small>
+                                            <p>{{answer.content}}</p>
+                                            <div class="quest-opt">
+                                                <a href="">Like</a>
+                                            </div>
                                     </div>
-                                    <br><br>
+                                        <br><br>
+                                    {% endif %}
                                 {% endfor %}
                                     
                             </div>

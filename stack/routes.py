@@ -7,6 +7,7 @@ from .models import User,Question,Answer
 @app.route('/')
 def index():
     questions=Question.query.all()
+    
     return render_template('index.html',questions=questions)
 
 #create_an account
@@ -51,7 +52,7 @@ def ask():
     db.session.add(new_question)
     db.session.commit()
     flash("Question Asked! Wait for the replies.")
-    return redirect(url_for('index'))
+    return redirect(url_for('ask'))
 
 #ask page
 @app.route('/ask_questions')
@@ -84,15 +85,24 @@ def update_question(question_id):
     return render_template('update.html',question_to_update=question_to_update)
 
 #answer a question
-@app.route('/answer_question/<int:question_id>',methods=['GET', 'POST'])
+@app.route('/answer_question/<int:question_id>')
 def answer_question(question_id):
     question_to_answer=Question.query.get_or_404(question_id)
-    answers=Answer.query.filter_by(author=current_user).all()
-    if request.method == 'POST':
-        content=request.form.get('content')
-        new_answer=Answer(content=content,question=question_to_answer,author=current_user)
-        db.session.add(new_answer)
-        db.session.commit()
-        return redirect('/answer_question/<int:question_id>')
-    return render_template('answer.html',question_to_answer=question_to_answer,answers=answers)
+    answers=Answer.query.filter_by(question=question_to_answer).all()
+    
+     
 
+    count=0
+    for i in answers:
+        count+=1
+    
+    return render_template('answer.html',question_to_answer=question_to_answer,answers=answers,count=count)
+
+@app.route('/add_answer/<int:question_id>',methods=['POST'])
+def add_answer(question_id):
+    question_to_answer=Question.query.get_or_404(question_id)
+    content=request.form.get('content')
+    new_answer=Answer(content=content,question=question_to_answer,author=current_user)
+    db.session.add(new_answer)
+    db.session.commit()
+    return redirect(url_for('view_questions'))
