@@ -1,7 +1,7 @@
 from . import app,db,bcrypt
 from flask import render_template,redirect,request,url_for,flash
 from flask_login import login_user,logout_user,current_user
-from .models import User,Question
+from .models import User,Question,Answer
 
 #home page
 @app.route('/')
@@ -72,7 +72,7 @@ def delete_question(question_id):
     db.session.commit()
     return redirect(url_for('index'))
 
-#
+##update a question
 @app.route('/update_question/<int:question_id>',methods=['GET', 'POST'])
 def update_question(question_id):
     question_to_update=Question.query.get_or_404(question_id)
@@ -80,10 +80,19 @@ def update_question(question_id):
         question_to_update.title=request.form.get('title')
         question_to_update.content=request.form.get('description')
         db.session.commit()
-        flash("Question Updated successfully")
+        return redirect(url_for('index'))
     return render_template('update.html',question_to_update=question_to_update)
 
+#answer a question
 @app.route('/answer_question/<int:question_id>',methods=['GET', 'POST'])
 def answer_question(question_id):
     question_to_answer=Question.query.get_or_404(question_id)
-    return render_template('answer.html',question_to_answer=question_to_answer)
+    answers=Answer.query.filter_by(author=current_user).all()
+    if request.method == 'POST':
+        content=request.form.get('content')
+        new_answer=Answer(content=content,question=question_to_answer,author=current_user)
+        db.session.add(new_answer)
+        db.session.commit()
+        return redirect('/answer_question/<int:question_id>')
+    return render_template('answer.html',question_to_answer=question_to_answer,answers=answers)
+

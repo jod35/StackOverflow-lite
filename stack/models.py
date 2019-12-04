@@ -1,4 +1,5 @@
 from . import db,login_manager
+from datetime import datetime
 from flask_login import UserMixin
 
 
@@ -10,6 +11,7 @@ class User(db.Model,UserMixin):
     email=db.Column(db.String(80),nullable=False,unique=True)
     password=db.Column(db.Text,nullable=False)
     questions=db.relationship('Question',backref='author',lazy=True)
+    answers=db.relationship('Answer',backref='author',lazy=True)
         
     
 
@@ -22,6 +24,7 @@ class Question(db.Model):
     content =db.Column(db.Text,nullable=False)
     user_id=db.Column(db.Integer(),db.ForeignKey('user.id'))
     answers=db.relationship('Answer',backref='question',lazy=True)
+    date_asked=db.Column(db.DateTime(),default=datetime.utcnow)
     
 
 class Answer(db.Model):
@@ -29,6 +32,7 @@ class Answer(db.Model):
     content=db.Column(db.Text,nullable=False)
     user_id=db.Column(db.Integer(),db.ForeignKey('user.id'))
     question_id=db.Column(db.Integer(),db.ForeignKey('question.id'))
+    date_answered=db.Column(db.DateTime(),default=datetime.utcnow)
 
 
 
