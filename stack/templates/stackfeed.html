@@ -2,13 +2,13 @@
 {% block body %}
      <div class="dashboard">
          <div class="left">
-            <a href="" class="user-opt">View Questions</a>
+            <a href="{{url_for('index')}}" class="user-opt">Home</a>
             <a href="{{url_for('ask_page')}}" class="user-opt">Ask A Question</a>
             <a href="{{url_for('logout')}}" class="user-opt">Log Out</a>
          </div>
          <div class="right">
              <div class="recent">
-               <h1>Recent Questions By You</h1>
+               <h1>Recent Questions</h1>
                {%for question in questions%}
                   
                         <div class="quest">
@@ -17,7 +17,7 @@
                            <p>{{question.content}}</p>
                            <div class="quest-opt">
                                 <i class="fas fa-heart"></i>
-                            <a href="" class="">Answer</a>
+                            <a href="/answer_question/{{question.id}}" class="">Answer</a>
                             <a href="">Like</a>
                            </div> 
                         </div>

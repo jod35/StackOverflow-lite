@@ -3,11 +3,13 @@ from flask import render_template,redirect,request,url_for,flash
 from flask_login import login_user,logout_user,current_user
 from .models import User,Question
 
+#home page
 @app.route('/')
 def index():
     questions=Question.query.all()
     return render_template('index.html',questions=questions)
 
+#create_an account
 @app.route('/signup',methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
@@ -22,23 +24,24 @@ def signup():
         return redirect('signup')
     return render_template('sign.html')
 
+#sign in
 @app.route('/login',methods=['GET', 'POST'])
 def login():
     username=request.form.get('username')
     password=request.form.get('password')
 
     user=User.query.filter_by(username=username).first()
-
-
     if user and bcrypt.check_password_hash(user.password,password):
         login_user(user)
         return redirect(url_for('index'))
     return render_template('login.html')
 
+#sign out a user
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('index'))
+
 #ask questions
 @app.route('/ask',methods=['POST'])
 def ask():
@@ -50,22 +53,26 @@ def ask():
     flash("Question Asked! Wait for the replies.")
     return redirect(url_for('index'))
 
+#ask page
 @app.route('/ask_questions')
 def ask_page():
     return render_template('ask.html')
 
+#view people's questions
 @app.route('/feed')
 def view_questions():
     questions=Question.query.limit(10).all()
     return render_template('stackfeed.html',questions=questions)
 
-@app.route('/delete_question/<int:question_id>',methods=['POST','GET'])
+#delete a question
+@app.route('/delet  e_question/<int:question_id>',methods=['POST','GET'])
 def delete_question(question_id):
     question_to_delete=Question.query.get_or_404(question_id)
     db.session.delete(question_to_delete)
     db.session.commit()
     return redirect(url_for('index'))
 
+#
 @app.route('/update_question/<int:question_id>',methods=['GET', 'POST'])
 def update_question(question_id):
     question_to_update=Question.query.get_or_404(question_id)
@@ -79,4 +86,4 @@ def update_question(question_id):
 @app.route('/answer_question/<int:question_id>',methods=['GET', 'POST'])
 def answer_question(question_id):
     question_to_answer=Question.query.get_or_404(question_id)
-    return render_template('answer.html')
+    return render_template('answer.html',question_to_answer=question_to_answer)

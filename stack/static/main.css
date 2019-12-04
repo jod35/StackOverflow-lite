@@ -41,6 +41,7 @@ header a{
   border: white 1px solid;
   border-radius: 7px;
   padding: 16px;
+  font-weight: bolder;
 }
 .mybtn:hover{
   color:white;

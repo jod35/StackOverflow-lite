@@ -1,5 +1,33 @@
 {% extends 'layout.html' %}
 {% block body %}
-    
+     <div class="dashboard">
+         <div class="left">
+            <a href="{{url_for('index')}}" class="user-opt">Home</a> 
+            <a href="{{url_for('view_questions')}}" class="user-opt">View Questions</a>
+            <a href="{{url_for('ask_page')}}" class="user-opt">Ask A Question</a>
+            <a href="{{url_for('logout')}}" class="user-opt">Log Out</a>
+         </div>
+         <div class="right">
+             <div class="recent">                
+                        <div class="quest">
+                           <h2>{{question_to_answer.author}}</h2> 
+                           <h3>{{question_to_answer.title}} </h3>
+                           <p>{{question_to_answer.content}}</p>
+                           <br>
+                           <div class="">
+                                <form action="" method="post">
+                                   <textarea name="" id="" cols="30" rows="10" placeholder="Your Answer"></textarea>
+                                   <br>
+                                   <input type="submit" value="Answer Question" class="mybtn">
+                                </form>
+                            </div>
+                        </div>
+                        <br><br>
+
+                       
+             </div>
+         </div>
+     </div>
+ 
+  
 {% endblock body %}
-    
