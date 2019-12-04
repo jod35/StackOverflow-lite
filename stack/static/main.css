@@ -112,10 +112,16 @@ background-color:dodgerblue;
 }
 .question-form{
   padding: 20px;
+  text-align: center;;
 }
 .ask-quest{
   padding: 20px;
   color: dodgerblue;
+  width: 500px;
+}
+textarea{
+  border-radius: 7px;
+  border: 1px solid rgba(116, 113, 113, 0.356);
 }
 .question{
   padding: 40px;

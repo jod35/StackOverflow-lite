@@ -74,3 +74,13 @@ def delete_question(question_id):
     db.session.delete(question_to_delete)
     db.session.commit()
     return redirect(url_for('index'))
+
+@app.route('/update_question/<int:question_id>',methods=['GET', 'POST'])
+def update_question(question_id):
+    question_to_update=Question.query.get_or_404(question_id)
+    if request.method == 'POST':
+        question_to_update.title=request.form.get('title')
+        question_to_update.content=request.form.get('description')
+        db.session.commit()
+        flash("Question Updated successfully")
+    return render_template('update.html',question_to_update=question_to_update)
