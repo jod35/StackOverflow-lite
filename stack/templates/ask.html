@@ -1,8 +1,9 @@
 {%extends 'layout.html'%}
 {%block body%}
 
-<form action="{{url_for('ask')}}" method="post">
-    <div class="question form">
+<div class="question-form">
+  <form action="{{url_for('ask')}}" method="post">
+    <div class="ask-quest">
       {%with messages = get_flashed_messages()%}
         {%if messages%}
           {%for message in messages%}
@@ -14,13 +15,18 @@
       {%endwith%}
       <h1>Ask A Question</h1>
       <h3>Title</h3>
-      <input type="text" name="title" id="" class="myfield">
+      <input type="text" name="title" id="" class="myfield ask" >
       <br><br>
       <h3>Description</h3>
-      <textarea name="description" id="" cols="30" rows="10"></textarea>
+      <textarea name="description" id="" cols="40" rows="20"></textarea>
       <br><br>
-      <input type="submit" value="Ask" class="mybtn">
+      <input type="submit" value="Ask The Question" class="mybtn">
     </div>
+
 </form>
+<div class="question">
+  <a href="" class="user-opt">Back</a>
+</div>
+</div>
 
 {%endblock body%}

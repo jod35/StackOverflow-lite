@@ -110,14 +110,43 @@ background-color:dodgerblue;
  padding: 20px;
  color: dodgerblue;
 }
-
+.question-form{
+  padding: 20px;
+}
+.ask-quest{
+  padding: 20px;
+  color: dodgerblue;
+}
 .question{
   padding: 40px;
-  border:1px solid dodgerblue;
+  width: 80%;
   color: dodgerblue;
 }
 .quest{
   border:1px solid rgba(104, 102, 102, 0.363);
   border-radius: 7px;
   padding:20px;
+}
+.quest p{
+  color: black;
+}
+.myfield{
+  width: 350px;
+}
+
+input[type=text]{
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid rgba(146, 135, 135, 0.397);
+  color: dodgerblue;
+}
+
+input[type=password]{
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid rgba(146, 135, 135, 0.397);
+  color: dodgerblue;
+}
+.question-form{
+  display: flex;
 }
