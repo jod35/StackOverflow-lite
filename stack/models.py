@@ -10,7 +10,7 @@ class User(db.Model,UserMixin):
     email=db.Column(db.String(80),nullable=False,unique=True)
     password=db.Column(db.Text,nullable=False)
     questions=db.relationship('Question',backref='author',lazy=True)
-    
+        
     
 
     def __repr__(self):
