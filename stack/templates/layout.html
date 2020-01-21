@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{url_for('static',filename='all.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='fonteawesome.min.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='solid.css')}}">
@@ -15,7 +16,7 @@
 </head>
 <body>
     <header>
-       <a href="{{url_for('index')}}"><h1>Stack OverFlow Lite</h1></a>
+       <a href="{{url_for('index')}}"><img src="{{url_for('static',filename='stacklite.png')}}" alt="" srcset="" width="300" ></a>
     </header>
     
         {% block body %}
