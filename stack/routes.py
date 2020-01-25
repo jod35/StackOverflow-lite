@@ -52,7 +52,7 @@ def ask():
     db.session.add(new_question)
     db.session.commit()
     flash("Question Asked! Wait for the replies.")
-    return redirect(url_for('ask'))
+    return redirect(url_for('index'))
 
 #ask page
 @app.route('/ask_questions')
