@@ -14,7 +14,7 @@
                                       <div class="status-header">
                                             <div class="status-heading">
                                                 <div class="prof-pic">
-                                                    <img src=".{{url_for('static',filename='images/grin-alt.svg')}}" alt="face" width="50">
+                                                    <img src="{{url_for('static',filename='images/grin-alt.svg')}}" alt="face" width="50">
                                                 </div>
                                                 <h3>{{question_to_answer.author}}</h3>
                                             </div>
@@ -30,42 +30,21 @@
                                       <div class="like-share">
                                           <a href=""><img src="{{url_for('static',filename='images/thumbs-up.svg')}}" alt="" width="30">Like</a>
                                           <a href=""><img src="{{url_for('static',filename='images/thumbs-down.svg')}}" alt="" width="30">Dislike</a>
+                                          <a href="#"><img src="{{url_for('static',filename='images/comment-dots.svg')}}" alt="" width="30">{{count}}</a>
                                       </div>
+                                      <hr>
                           </div>
-                          <hr>
-                          <br>
-
                       </div>
-    
 
-                                <form action="/add_answer/{{question_to_answer.id}}" method="post">
-                                   <textarea name="content" id="" cols="30" rows="10" placeholder="Your Answer"></textarea>
-                                   <br>
-                                   <input type="submit" value="Answer Question" class="mybtn">
-                                </form>
-                            <br><br>
-
-                            <div class="">
-                                <h2>{{count}} Answers for the question</h2>
-                                {% for answer in answers  %}
-
-                                    {% if answer.question_id == question_to_answer.id %}
-                                    <div class="quest">
-                                            <h3>{{answer.author}}</h3> at <small>{{answer.date_answered.strftime("%d-%m-%y %H:%M")}}</small>
-                                            <p>{{answer.content}}</p>
-                                            <div class="quest-opt">
-                                                <a href="">Like</a>
-                                            </div>
-                                    </div>
-                                        <br><br>
-                                    {% endif %}
-                                {% endfor %}
-                        </div>
-                        <br><br>
+                      <div class="content-text">
+                          <form  action="/add_answer/{{question_to_answer.id}}" method="post">
+                            <label for="content">Your Answer</label><br>
+                            <textarea name="content" rows="5" cols="80"></textarea>
+                            <input type="submit"  value="Submit Answer" class="mybtn">
+                          </form>
+                      </div>
 
 
-             </div>
-         </div>
 
 
 

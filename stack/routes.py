@@ -7,7 +7,7 @@ from .models import User,Question,Answer
 @app.route('/')
 def index():
     questions=Question.query.all()
-    
+
     return render_template('index.html',questions=questions)
 
 #create_an account
@@ -89,14 +89,16 @@ def update_question(question_id):
 def answer_question(question_id):
     question_to_answer=Question.query.get_or_404(question_id)
     answers=Answer.query.filter_by(question=question_to_answer).all()
-    
-     
-
     count=0
     for i in answers:
         count+=1
-    
-    return render_template('answer.html',question_to_answer=question_to_answer,answers=answers,count=count)
+    context={
+    'question_to_answer':question_to_answer,
+    'answers':answers,
+    'count':count
+    }
+
+    return render_template('answer.html',**context)
 
 @app.route('/add_answer/<int:question_id>',methods=['POST'])
 def add_answer(question_id):

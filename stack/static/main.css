@@ -47,6 +47,7 @@ header a{
   color:white;
 
 }
+
 .form{
   padding: 30px;
   color:rgb(72, 72, 224);
@@ -87,8 +88,9 @@ header a{
   position: relative;
   background-color: white;
 
-
-
+}
+.left a{
+  color: coral;
 }
 
 .user-opt{
@@ -101,7 +103,7 @@ header a{
 }
 .user-opt:hover{
 color: white;
-background-color:dodgerblue;
+background-color:coral;
 }
 .right{
 
@@ -157,10 +159,15 @@ input[type=password]{
 .question-form{
   display: flex;
 }
+.content-text{
+  padding:30px;
+  width: 70%;
+  color: dodgerblue;
+}
 .status{
     width: 70%;
     font-family: sans-serif;
-    
+
     border-radius: 7px;
 
     color: dodgerblue;
@@ -190,6 +197,6 @@ input[type=password]{
     justify-content: space-evenly;
 }
 .like-share a{
-    color: dodgerblue;
+    color: coral;
     text-decoration: none;
 }
