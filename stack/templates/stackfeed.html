@@ -9,42 +9,33 @@
          <div class="right">
              <div class="recent">
                <h1>Recent Questions</h1>
+               <br>
                {%for question in questions%}
+                          <div class="status">
+                              <div class="status-header">
+                                    <div class="status-heading">
+                                        <div class="prof-pic">
+                                            <img src=".{{url_for('static',filename='images/grin-alt.svg')}}" alt="face" width="50">
+                                        </div>
+                                        <h3>{{question.author}}</h3>
+                                    </div>
+                                    <div class="time-posted">
+                                        <small>{{question.date_asked.strftime("asked on %d-%m-%y at %H:%M")}}</small>
+                                    </div>
+                              </div>
 
-                        <div class="quest">
-                           <h2>{{question.author}}</h2>
-                           <h3>{{question.title}} </h3>
-                           <p>{{question.content}}</p>
-                           <div class="quest-opt">
-                                <i class="fas fa-heart"></i>
-                            <a href="/answer_question/{{question.id}}" class="">Answer</a>
-                            <a href="">Like</a>
-                           </div>
-                        </div>
-                        <br><br>
-                        <div class="status">
-        <div class="status-header">
-            <div class="status-heading">
-                <div class="prof-pic">
-                    <img src="./images/grin-alt.svg" alt="face" width="50">
-                </div>
-            <h3>Ssali Jonathan</h3>
-            </div>
-            <div class="time-posted">
-                <small>Yesterday at 3pm</small>
-            </div>
-        </div>
-        <hr>
 
-        <div class="status-content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, totam. Consectetur ipsa nobis itaque nulla nam deserunt. Maiores, modi tempore?</p>
-        </div>
-        <div class="like-share">
-            <a href=""><img src="{{url_for('static',filename='images/thumbs-up.svg')}}" alt="" width="30">Like</a>
-            <a href=""><img src="./images/comment-dots.svg" alt="" width="30">Comment</a>
-            <a href=""><img src="./images/thumbs-down.svg" alt="" width="30">Dislike</a>
-        </div>
-    </div>
+                              <div class="status-content">
+                                <p>{{question.content}}</p>
+                              </div>
+                              <div class="like-share">
+                                  <a href=""><img src="{{url_for('static',filename='images/thumbs-up.svg')}}" alt="" width="30">Like</a>
+                                  <a href="/answer_question/{{question.id}}"><img src="{{url_for('static',filename='images/comment-dots.svg')}}" alt="" width="30">Answer</a>
+                                  <a href=""><img src="{{url_for('static',filename='images/thumbs-down.svg')}}" alt="" width="30">Dislike</a>
+                              </div>
+                      </div>
+                      <hr>
+                      <br>
 
                {%endfor%}
              </div>

@@ -86,8 +86,8 @@ header a{
   border: 1px solid rgba(148, 135, 135, 0.212);
   position: relative;
   background-color: white;
-  
-  
+
+
 
 }
 
@@ -156,4 +156,40 @@ input[type=password]{
 }
 .question-form{
   display: flex;
+}
+.status{
+    width: 70%;
+    font-family: sans-serif;
+    
+    border-radius: 7px;
+
+    color: dodgerblue;
+}
+.status-header{
+    display: flex;
+    justify-content: space-between;
+
+}
+.status-heading{
+    display: flex;
+    justify-content: space-around;
+}
+.time-posted{
+    padding: 20px;
+    color: dodgerblue;
+}
+.prof-pic{
+    padding: 5px;
+}
+.status-content{
+    padding: 5px;
+}
+.like-share{
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.like-share a{
+    color: dodgerblue;
+    text-decoration: none;
 }
