@@ -6,8 +6,7 @@ from .models import User,Question,Answer
 #home page
 @app.route('/')
 def index():
-    questions=Question.query.all()
-
+    questions=Question.query.order_by(Question.id.desc()).all()
     return render_template('index.html',questions=questions)
 
 #create_an account
@@ -62,7 +61,7 @@ def ask_page():
 #view people's questions
 @app.route('/feed')
 def view_questions():
-    questions=Question.query.limit(10).all()
+    questions=Question.query.order_by(Question.id.desc()).limit(10).all()
     return render_template('stackfeed.html',questions=questions)
 
 #delete a question
@@ -104,7 +103,11 @@ def answer_question(question_id):
 def add_answer(question_id):
     question_to_answer=Question.query.get_or_404(question_id)
     content=request.form.get('content')
-    new_answer=Answer(content=content,question=question_to_answer,author=current_user)
+    args={
+     'content':content,
+     'author':current_user
+    }
+    new_answer=Answer(**args)
     db.session.add(new_answer)
     db.session.commit()
     return redirect(url_for('view_questions'))

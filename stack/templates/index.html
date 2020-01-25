@@ -1,5 +1,14 @@
 {% extends 'layout.html' %}
 {% block body %}
+`{% with messages =get_flashed_messages()  %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="other">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+ {% endwith %}`
   {% if current_user.is_authenticated %}
      <div class="dashboard">
          <div class="left">
@@ -11,7 +20,7 @@
              <div class="recent">
                <h1>Recent Questions By You</h1>
                {%for question in questions%}
-                  
+
                   {% if question.author==current_user %}
                         <div class="quest">
                            <h3>{{question.title}}</h3>
@@ -20,18 +29,18 @@
 
                                  <a href="/update_question/{{question.id}}">Edit</a>
                                  <a href="/delete_question/{{question.id}}">Delete</a>
-                           </div> 
+                           </div>
                         </div>
                         <br><br>
                   {% endif %}
-                  
+
                   {% if not questions %}
                      <div class="quest">
                         <p>You currently have not asked any</p>
                      </div>
                   {% endif %}
-                       
-                     
+
+
                {%endfor%}
              </div>
          </div>
