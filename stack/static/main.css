@@ -110,7 +110,7 @@ color: white;
 background-color:coral;
 }
 .right{
-  background-color: dodgerblue;
+  background-color:rgba(255, 255, 255, 0.541);
   width: 80%;
 }
 .recent{

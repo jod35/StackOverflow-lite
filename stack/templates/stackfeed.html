@@ -26,6 +26,7 @@
 
 
                               <div class="status-content">
+                                <h3>{{ question.title }}</h3>  
                                 <p>{{question.content}}</p>
                               </div>
                               <div class="like-share">
@@ -34,7 +35,7 @@
                                   <a href=""><img src="{{url_for('static',filename='images/thumbs-down.svg')}}" alt="" width="30">Dislike</a>
                               </div>
                       </div>
-                      <hr>
+                      
                       <br>
 
                {%endfor%}

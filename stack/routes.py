@@ -126,3 +126,11 @@ def add_answer(question_id):
     db.session.add(new_answer)
     db.session.commit()
     return redirect(url_for('view_questions'))
+
+@app.route('/delete_answer/<int:answer_id>')
+def delete_answer(answer_id):
+    answer_todelete=Answer.query.get_or_404(answer_id)
+    db.session.delete(answer_todelete)
+    db.session.commit()
+    flash('Answer Removed')
+    return redirect(url_for('index'))
