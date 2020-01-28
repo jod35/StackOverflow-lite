@@ -13,11 +13,25 @@ def index():
 @app.route('/signup',methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
-        new_user=User(
-            full_name=request.form.get('full_name'),
-            username=request.form.get('username'),
-            email=request.form.get('email'),
-            password=bcrypt.generate_password_hash(request.form.get('password')))
+        
+        full_name=request.form.get('full_name'),
+        username=request.form.get('username'),
+        email=request.form.get('email'),
+        password=bcrypt.generate_password_hash(request.form.get('password'))
+        user_in_existence=User.query.filter_by(email=email).first()
+
+        if user_in_existence:
+            flash("Invalid Credentials!! Account Already Exists")
+            return redirect(url_for('signup')) 
+        
+        args={
+            'full_name':full_name,
+            'username':username,
+            'email':email,
+            'password':password
+        }
+        
+        new_user=User(**args)
         db.session.add(new_user)
         db.session.commit()
         flash('Account Has Been Created Successfully')
@@ -105,7 +119,8 @@ def add_answer(question_id):
     content=request.form.get('content')
     args={
      'content':content,
-     'author':current_user
+     'author':current_user,
+     'question':question_to_answer
     }
     new_answer=Answer(**args)
     db.session.add(new_answer)

@@ -22,16 +22,34 @@
                {%for question in questions%}
 
                   {% if question.author==current_user %}
-                        <div class="quest">
-                           <h3>{{question.title}}</h3>
-                           <p>{{question.content}}</p>
-                           <div class="quest-opt">
+               
+                  <div class="status">
+                      <div class="status-header">
+                            <div class="status-heading">
+                                <div class="prof-pic">
+                                    <img src=".{{url_for('static',filename='images/grin-alt.svg')}}" alt="face" width="50">
+                                </div>
+                                <h3>{{question.author}}</h3>
+                            </div>
+                            <div class="time-posted">
+                                <small>{{question.date_asked.strftime("asked on %d-%m-%y at %H:%M")}}</small>
+                            </div>
+                      </div>
 
-                                 <a href="/update_question/{{question.id}}">Edit</a>
-                                 <a href="/delete_question/{{question.id}}">Delete</a>
-                           </div>
-                        </div>
-                        <br><br>
+
+                      <div class="status-content">
+                        <p>{{question.content}}</p>
+                      </div>
+                      <div class="like-share">
+                          <a href=""><img src="{{url_for('static',filename='images/thumbs-up.svg')}}" alt="" width="30">Like</a>
+                          <a href="/answer_question/{{question.id}}"><img src="{{url_for('static',filename='images/comment-dots.svg')}}" alt="" width="30">Answer</a>
+                          <a href=""><img src="{{url_for('static',filename='images/thumbs-down.svg')}}" alt="" width="30">Dislike</a>
+                      </div>
+              </div>
+              <hr>
+              <br>
+
+   
                   {% endif %}
 
                   {% if not questions %}

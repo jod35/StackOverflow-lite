@@ -4,6 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  background-color: dodgerblue;
+}
 header,footer{
   background-color: rgb(72, 72, 224);
   color: white;
@@ -55,10 +58,11 @@ header a{
   margin: auto;
   text-align: center;
   border-radius: 7px;
-  border: 1px solid rgb(72, 72, 224);
+  border: 1px solid coral;
+  background-color: white;
 }
 .other{
-  border: 1px solid rgb(72, 72, 224);
+  border: 1px solid coral;
   padding: 20px;
   border-radius: 7px;
 }
@@ -106,7 +110,7 @@ color: white;
 background-color:coral;
 }
 .right{
-
+  background-color: dodgerblue;
   width: 80%;
 }
 .recent{
@@ -173,8 +177,8 @@ input[type=password]{
     font-family: sans-serif;
 
     border-radius: 7px;
-
-    color: dodgerblue;
+    background-color: rgba(255, 255, 255, 0.842);
+    color: rgb(30, 53, 255);
 }
 .status-header{
     display: flex;
