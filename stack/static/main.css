@@ -5,13 +5,14 @@
   box-sizing: border-box;
 }
 body{
-  background-color: dodgerblue;
+  background-color: rgb(233, 238, 243);
 }
 header,footer{
   background-color: rgb(72, 72, 224);
   color: white;
   padding: 20px;
   text-align: center;
+  font-family: monospace;
 }
 header a{
   color: white;
@@ -174,7 +175,7 @@ input[type=password]{
 }
 .status{
     width: 70%;
-    font-family: sans-serif;
+    font-family: monospace  ;
 
     border-radius: 7px;
     background-color: rgba(255, 255, 255, 0.842);
@@ -210,4 +211,11 @@ input[type=password]{
 }
 .danger{
   color: red;
+}
+.success{
+  color: green;
+}
+.delete a{
+  color: red;
+  text-decoration: none;
 }

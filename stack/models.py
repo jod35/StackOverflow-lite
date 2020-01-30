@@ -12,6 +12,7 @@ class User(db.Model,UserMixin):
     password=db.Column(db.Text,nullable=False)
     questions=db.relationship('Question',backref='author',lazy=True)
     answers=db.relationship('Answer',backref='author',lazy=True)
+
         
     
 
@@ -20,7 +21,7 @@ class User(db.Model,UserMixin):
 
 class Question(db.Model):
     id=db.Column(db.Integer,primary_key=True)
-    title=db.Column(db.String(40),nullable=False)
+    title=db.Column(db.String(200),nullable=False)
     content =db.Column(db.Text,nullable=False)
     user_id=db.Column(db.Integer(),db.ForeignKey('user.id'))
     answers=db.relationship('Answer',backref='question',lazy=True)
@@ -33,6 +34,10 @@ class Answer(db.Model):
     user_id=db.Column(db.Integer(),db.ForeignKey('user.id'))
     question_id=db.Column(db.Integer(),db.ForeignKey('question.id'))
     date_answered=db.Column(db.DateTime(),default=datetime.utcnow)
+
+    def __repr__(self):
+        return "{}".format(self.content)
+
 
 
 

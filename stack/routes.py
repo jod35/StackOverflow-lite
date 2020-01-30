@@ -8,7 +8,14 @@ from .models import User,Question,Answer
 @app.route('/')
 def index():
     questions=Question.query.order_by(Question.id.desc()).all()
-    return render_template('index.html',questions=questions)
+    answers=Answer.query.all()
+    count=0
+    context={
+        'answers':answers,
+        'count':count,
+        'questions':questions,
+    }
+    return render_template('index.html',**context)
 
 #create_an account
 @app.route('/signup',methods=['GET', 'POST'])
@@ -77,7 +84,23 @@ def ask_page():
 @app.route('/feed')
 def view_questions():
     questions=Question.query.order_by(Question.id.desc()).limit(10).all()
-    return render_template('stackfeed.html',questions=questions)
+    count=0
+    answers=Answer.query.all()
+    for i in questions:
+        for a in answers:
+            if a.question_id == i.id:
+                count+=1
+               
+    context={
+        'answers':answers,
+        'count':count,
+        'questions':questions,
+    }
+
+  
+                
+
+    return render_template('stackfeed.html',**context)
 
 #delete a question
 @app.route('/delet  e_question/<int:question_id>',methods=['POST','GET'])

@@ -31,7 +31,8 @@
                               </div>
                               <div class="like-share">
                                   <a href=""><img src="{{url_for('static',filename='images/thumbs-up.svg')}}" alt="" width="30">Like</a>
-                                  <a href="/answer_question/{{question.id}}"><img src="{{url_for('static',filename='images/comment-dots.svg')}}" alt="" width="30">Answer</a>
+                                      
+                                 <a href="/answer_question/{{question.id}}"><img src="{{url_for('static',filename='images/comment-dots.svg')}}" alt="" width="30">{{ count }} Answers</a>
                                   <a href=""><img src="{{url_for('static',filename='images/thumbs-down.svg')}}" alt="" width="30">Dislike</a>
                               </div>
                       </div>

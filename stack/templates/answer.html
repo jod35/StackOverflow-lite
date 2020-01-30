@@ -64,9 +64,11 @@
                                     <p>{{answer.content}}</p>
                                   </div>
                                   
-                                  {% if answer.author==current_user %}
-                                      <a href="/delete_answer/{{answer.id}}">Delete Answer</a>
-                                  {% endif %}
+                                 <div class="delete">
+                                    {% if answer.author==current_user %}
+                                       <a href="/delete_answer/{{answer.id}}"><img src="{{url_for('static',filename='times-circle.svg')}}" alt="" width="30">Delete</a>
+                                    {% endif %}
+                                 </div>
                                       
 
                           </div>
