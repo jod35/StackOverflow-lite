@@ -7,9 +7,9 @@
               `{% with messages =get_flashed_messages()  %}
                   {% if messages %}
                       {% for message in messages %}
-                          <div class="other">
-                              {{ message }}
-                          </div>
+                          <p class="danger">
+                             <small> {{ message }}</small>
+                          </p>
                       {% endfor %}
                   {% endif %}
                {% endwith %}`

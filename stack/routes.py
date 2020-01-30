@@ -1,5 +1,6 @@
-from . import app,db,bcrypt
+from . import app,db
 from flask import render_template,redirect,request,url_for,flash
+from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import login_user,logout_user,current_user
 from .models import User,Question,Answer
 
@@ -17,11 +18,11 @@ def signup():
         full_name=request.form.get('full_name'),
         username=request.form.get('username'),
         email=request.form.get('email'),
-        password=bcrypt.generate_password_hash(request.form.get('password'))
+        password=generate_password_hash(request.form.get('password'))
         user_in_existence=User.query.filter_by(email=email).first()
 
         if user_in_existence:
-            flash("Invalid Credentials!! Account Already Exists")
+            flash("Account with email '%s' Already Exists"%email)
             return redirect(url_for('signup')) 
         
         args={
@@ -35,7 +36,7 @@ def signup():
         db.session.add(new_user)
         db.session.commit()
         flash('Account Has Been Created Successfully')
-        return redirect('signup')
+        return redirect(url_for('login'))
     return render_template('sign.html')
 
 #sign in
@@ -45,7 +46,7 @@ def login():
     password=request.form.get('password')
 
     user=User.query.filter_by(username=username).first()
-    if user and bcrypt.check_password_hash(user.password,password):
+    if user and check_password_hash(user.password,password):
         login_user(user)
         return redirect(url_for('index'))
     return render_template('login.html')

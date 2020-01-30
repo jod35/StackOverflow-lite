@@ -70,7 +70,7 @@ header a{
   color:dodgerblue;
 }
 .container{
-  padding: 80px;
+  padding: 20px;
   min-height: 500px;
 }
 .form-group{
@@ -207,4 +207,7 @@ input[type=password]{
 .like-share a{
     color: coral;
     text-decoration: none;
+}
+.danger{
+  color: red;
 }
