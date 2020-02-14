@@ -66,13 +66,13 @@
                                   
                                  <div class="delete">
                                     {% if answer.author==current_user %}
-                                       <a href="/delete_answer/{{answer.id}}"><img src="{{url_for('static',filename='times-circle.svg')}}" alt="" width="30">Delete</a>
+                                       <a href="/delete_answer/{{answer.id}}">Delete</a>
                                     {% endif %}
                                  </div>
                                       
 
                           </div>
-                          <hr>
+                          
                           <br>
                         {%endfor%}
                       </div>

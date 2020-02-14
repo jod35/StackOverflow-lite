@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 body{
-  background-color: rgb(233, 238, 243);
+  
 }
 header,footer{
   background-color: rgb(72, 72, 224);
@@ -91,7 +91,7 @@ header a{
   height: 500px;
   border: 1px solid rgba(148, 135, 135, 0.212);
   position: relative;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 
 }
 .left a{
@@ -178,7 +178,7 @@ input[type=password]{
     font-family: monospace  ;
 
     border-radius: 7px;
-    background-color: rgba(255, 255, 255, 0.842);
+    border: rgba(0, 0, 0, 0.178) 1px solid;
     color: rgb(30, 53, 255);
 }
 .status-header{

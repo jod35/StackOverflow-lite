@@ -5,6 +5,7 @@
      
  <div class="dashboard">
     <div class="left">
+       <a href="{{url_for('index')}}" class="user-opt"><h3>{{ current_user }}</h3></a>
        <a href="{{url_for('view_questions')}}" class="user-opt">View Questions</a>
        <a href="{{url_for('ask_page')}}" class="user-opt">Ask A Question</a>
        <a href="{{url_for('logout')}}" class="user-opt">Log Out</a>
@@ -41,13 +42,10 @@
 
 
                  <div class="status-content">
-                   <p>{{question.content}}</p>
+                  
+                   <a href="/answer_question/{{question.id}}" class="status"><h3>{{question.title}}</h3></a>
                  </div>
-                 <div class="like-share">
-                     <a href=""><img src="{{url_for('static',filename='images/thumbs-up.svg')}}" alt="" width="30">Like</a>
-                     <a href="/answer_question/{{question.id}}"><img src="{{url_for('static',filename='images/comment-dots.svg')}}" alt="" width="30">Answer</a>
-                     <a href=""><img src="{{url_for('static',filename='images/thumbs-down.svg')}}" alt="" width="30">Dislike</a>
-                 </div>
+                
          </div>
          
          <br>
@@ -70,7 +68,7 @@
 
       
   <div class="welcome">
-        <h1>Welcome To Stack Overflow Lite</h1>
+        <h1>Let Us Answer The Questions Together</h1>
         <div class="options">
           <a href="{{url_for('signup')}}" class="mybtn">Create An Account</a>
           <a href="{{url_for('login')}}" class="mybtn">Login</a>
