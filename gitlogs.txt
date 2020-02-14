@@ -1,0 +1,193 @@
+===============================================================
+commit 82c606865c93fe78eb86d8171bb87f13bb74277f
+Author: jona <jona@localhost.localdomain>
+Date:   Thu Feb 13 23:39:25 2020 -0500
+
+    some nice frontend changes
+
+commit 38a39e07dab2e128d1268c6548315d100f25d324
+Author: jona <jona@localhost.localdomain>
+Date:   Thu Jan 30 18:28:13 2020 -0500
+
+    worked on the Answers to fix issues
+
+commit a4628dddc7b3de50f83e59a41bc165fc7b3b4f8b
+Author: jona <jona@localhost.localdomain>
+Date:   Thu Jan 30 16:26:00 2020 -0500
+
+    working on the authentication
+
+commit d555d62dacf1b3cb09aeb5b184b85e999fcb20f2
+Author: jona <jona@localhost.localdomain>
+Date:   Tue Jan 28 08:23:25 2020 -0500
+
+    fixing
+
+commit ca90626c85606dd3373bef46984e53cb4cacac02
+Author: jona <jona@localhost.localdomain>
+Date:   Tue Jan 28 01:48:19 2020 -0500
+
+    fixing some errors in answering
+
+commit d5b83cae121352ec58dcd0f61bccbe6ed405479e
+Author: jona <jona@localhost.localdomain>
+Date:   Sat Jan 25 12:05:56 2020 -0500
+
+    debugging the code for the question answering route
+
+commit 182ade04b7fb8151651985e21a21ca836c3ebe51
+Author: jona <jona@localhost.localdomain>
+Date:   Sat Jan 25 11:37:23 2020 -0500
+
+    modified the question answering page
+
+commit 547b68a985b47f01fde90b82b362b435070c15ad
+Author: jona <jona@localhost.localdomain>
+Date:   Sat Jan 25 10:59:08 2020 -0500
+
+    front-end changes in progress
+
+commit 6e2d99abc4f21efafb2b3f6e5e9da06380e676f6
+Author: jona <jona@localhost.localdomain>
+Date:   Sat Jan 25 09:50:29 2020 -0500
+
+    a little front-end adjustment
+
+commit 18881ad00870ef765022f6ee6b23b89d1cc3fc9c
+Author: jona <jona@localhost.localdomain>
+Date:   Sat Jan 25 09:43:32 2020 -0500
+
+    working on bugs in delete route
+
+commit d2e378c58469967677c3e229af905dd98322287f
+Author: jona <jona@localhost.localdomain>
+Date:   Sat Jan 25 01:26:18 2020 -0500
+
+    clean project
+
+commit 46f1c802c7c2cb7b9bfc1a144e7c7f1c803d7779
+Author: jonathan <jonathan@localhost.localdomain>
+Date:   Tue Jan 21 13:10:22 2020 +0300
+
+    better front-end
+
+commit a6e4944c01269de88a9a0c2502bcd94f7532678d
+Author: jod35 <jodestrevin@gmail.com>
+Date:   Wed Dec 4 12:32:29 2019 +0300
+
+    dynamic answers
+
+commit 828700f7bed80f61ff7fc9b7f9671471f6200800
+Author: jod35 <jodestrevin@gmail.com>
+Date:   Wed Dec 4 11:52:29 2019 +0300
+
+    backend and frontend for answering finished
+
+commit 54712472ee362784ae5ca5d19245644d253d4bc2
+Author: jod35 <jodestrevin@gmail.com>
+Date:   Wed Dec 4 09:34:49 2019 +0300
+
+    backend for answers
+
+commit 92720a74dfcb8e846d3fdf812ad566c7a8ac95f1
+Merge: d29ac99 0c796ff
+Author: jod35 <jodestrevin@gmail.com>
+Date:   Wed Dec 4 08:47:04 2019 +0300
+
+    merging files
+
+commit d29ac99ec419a69ae6de9d8d28ed59a756656d9b
+Author: jod35 <jodestrevin@gmail.com>
+Date:   Wed Dec 4 07:40:09 2019 +0300
+
+    merge update with master
+
+commit 0c796ffe96d4b72d0741e937514d0e852afbcf76
+Author: jod35 <jodestrevin@gmail.com>
+Date:   Wed Dec 4 07:39:16 2019 +0300
+
+    answers
+
+commit a6ec018d39cbd38b71aba6175e20faed76760e13
+Author: jod35 <jodestrevin@gmail.com>
+Date:   Wed Dec 4 07:38:33 2019 +0300
+
+    answers
+
+commit 927d1baccc406e7b13297797d89b2e2302342567
+Author: jod35 <jodestrevin@gmail.com>
+Date:   Wed Dec 4 07:24:50 2019 +0300
+
+    answers
+
+commit d7a55160d055a6146b2f586ae532309588379dde
+Author: jod35 <jodestrevin@gmail.com>
+Date:   Wed Dec 4 07:14:05 2019 +0300
+
+    relationships successful
+
+commit c22c64611307025ad67f481b2f78e39e9dc11326
+Author: jod35 <jodestrevin@gmail.com>
+Date:   Wed Dec 4 06:33:51 2019 +0300
+
+    updating questions
+
+commit 038be955db3bea0f775c9c6e3e4c537a9b1b4172
+Author: jod35 <jodestrevin@gmail.com>
+Date:   Tue Dec 3 18:41:13 2019 +0300
+
+    created procfile
+
+commit 6e6929a11a5d1017b1157c6f93a3c38f308fe6bd
+Author: jod35 <jodestrevin@gmail.com>
+Date:   Tue Dec 3 18:32:17 2019 +0300
+
+    trying to deploy to heroku
+
+commit 78ca950476bb8b61ba03c5dc5a2b3def3929c80f
+Author: jod35 <jodestrevin@gmail.com>
+Date:   Tue Dec 3 13:46:11 2019 +0300
+
+    changes
+
+commit c86f99030a9b565291b7958335ef956404435a4b
+Author: jod35 <jodestrevin@gmail.com>
+Date:   Fri Nov 29 14:09:49 2019 +0300
+
+    error with login
+
+commit 3434e3e1fe8819f50b8f9718f2dfcf1b36d7882f
+Author: jod35 <jodestrevin@gmail.com>
+Date:   Fri Nov 29 13:57:49 2019 +0300
+
+    account creation works
+
+commit 1e25456f09e9c62cb7b0148dc246ef9521b2b341
+Author: jod35 <jodestrevin@gmail.com>
+Date:   Fri Nov 29 13:57:22 2019 +0300
+
+    account creation works
+
+commit 8cab9fb8d6494ea5685e6c5fcf0d28c596f7c986
+Author: jock3r <jon@localhost.localdomain>
+Date:   Fri Nov 29 11:14:57 2019 +0300
+
+    login backend started
+
+commit aee2b973ca583a8b527047dd66faaedc8701b1cf
+Author: jock3r <jon@localhost.localdomain>
+Date:   Fri Nov 29 01:40:03 2019 +0300
+
+    added models and created the first db table
+
+commit 95ce62dedc3afe733e2545c253136cd343cd25cd
+Author: jock3r <jon@localhost.localdomain>
+Date:   Thu Nov 28 10:42:57 2019 +0300
+
+    frontend for login and sign up finished
+
+commit 5cf829e1b6586dc63d13f00db24097e6837331a7
+Author: jock3r <jon@localhost.localdomain>
+Date:   Thu Nov 28 10:18:15 2019 +0300
+
+    initial commit
